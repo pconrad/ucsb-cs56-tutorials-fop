@@ -1,0 +1,1 @@
+This subdirectory follows the tutorial at this page: http://xmlgraphics.apache.org/fop/1.1/embedding.html
