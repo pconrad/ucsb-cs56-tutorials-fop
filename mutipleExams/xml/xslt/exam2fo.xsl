@@ -52,14 +52,12 @@
 	<fo:flow flow-name="xsl-region-body">
 	  <fo:block>
 	    <xsl:text>
-Occupy Neutra Godard, trust fund sartorial before they sold out paleo cray Banksy health goth. Chia semiotics kitsch, vinyl crucifix wayfarers swag vegan Brooklyn Kickstarter 8-bit jean shorts. Bushwick Tonx asymmetrical iPhone artisan. Bicycle rights Echo Park ethical, +1 flannel direct trade brunch. Heirloom cliche kale chips PBR&amp;B salvia mixtape. Try-hard freegan Portland, scenester twee chambray Shoreditch butcher pour-over roof party mlkshk chillwave heirloom. Taxidermy hashtag Thundercats, fixie pop-up McSweeney's butcher keffiyeh cronut 8-bit Williamsburg shabby chic seitan.
-
-Etsy cardigan butcher pork belly, jean shorts art party cliche post-ironic paleo. Kogi wolf VHS trust fund photo booth flannel, irony Thundercats whatever tote bag mustache paleo Helvetica. Tofu Tonx authentic pop-up fixie meh. Cronut tilde keffiyeh 3 wolf moon salvia. Williamsburg Cosby sweater keffiyeh selvage. Next level PBR biodiesel, cold-pressed plaid Portland keffiyeh hashtag. Chillwave PBR&amp;B asymmetrical art party, farm-to-table hella Austin tote bag 90's taxidermy DIY occupy.
-
-Beard forage post-ironic farm-to-table blog actually. Put a bird on it Echo Park cliche, PBR cronut banh mi raw denim jean shorts XOXO cold-pressed whatever lo-fi paleo health goth. Flexitarian salvia before they sold out McSweeney's, Godard distillery craft beer flannel selfies. PBR swag tofu street art. Truffaut sriracha leggings literally, PBR&amp;B High Life freegan tousled vinyl. PBR&amp;B swag four dollar toast kitsch literally seitan, taxidermy scenester asymmetrical migas Kickstarter ethical. Tilde selfies Odd Future leggings pug locavore shabby chic, heirloom drinking vinegar bicycle rights.
-
-Tilde PBR&amp;B aesthetic whatever. Sriracha deep v hella, trust fund occupy PBR craft beer selfies literally. Helvetica tote bag Cosby sweater pork belly. Meggings pickled Odd Future, Godard seitan sustainable Vice skateboard chillwave trust fund gastropub food truck. Kickstarter art party skateboard, keffiyeh meditation next level put a bird on it. Sartorial artisan organic gluten-free, small batch polaroid pour-over. Shoreditch wolf Banksy Thundercats Intelligentsia, lo-fi fanny pack gastropub squid pour-over seitan 8-bit cornhole
+This is exam is closed book, except that you are permitted one 8.5x11 sheet of notes.  Please silence all cell phones and remove all headphones.
             </xsl:text>
+            <fo:list-block provisional-distance-between-starts="48pt"
+			   provisional-label-separation="24pt">
+              <xsl:apply-templates select="//questions/question" />
+            </fo:list-block>
 	  </fo:block>
         </fo:flow>
 
@@ -67,6 +65,21 @@ Tilde PBR&amp;B aesthetic whatever. Sriracha deep v hella, trust fund occupy PBR
       </fo:page-sequence>
 
     </fo:root>
+  </xsl:template>
+
+  <xsl:template match="question">
+     <fo:list-item>
+       <fo:list-item-label  end-indent="label-end()">
+         <fo:block>
+          (<xsl:number format="1" />) 
+         </fo:block>
+       </fo:list-item-label>
+       <fo:list-item-body  start-indent="body-start()">
+        <fo:block>
+          <xsl:value-of select="text" />
+         </fo:block>
+       </fo:list-item-body>
+     </fo:list-item>
   </xsl:template>
 
 

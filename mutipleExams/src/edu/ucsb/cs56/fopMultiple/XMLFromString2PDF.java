@@ -45,8 +45,20 @@ public class XMLFromString2PDF {
 		"<exam>" + 
 		"  <course>CS16</course>" +
 		"  <examTitle>Midterm Exam</examTitle>" +
-		"  <examNum>E02</examNum>" +
-		"</exam>";
+		"  <examNum>E02</examNum>";
+
+	    inputString +=		"  <questions>";
+
+	    for (int i=0;i<100;i++) {
+		inputString += (
+				"   <question>" +
+				"     <pts>10</pts>" +
+				"     <text>This is a question</text>" +
+				"   </question>");
+	    }
+
+	    inputString += ("  </questions>" +
+			    "</exam>");
 	    
             File xsltfile = new File(baseDir, "xml/xslt/exam2fo.xsl");
             File pdffile = new File(outDir, "XMLFromString2PDF.pdf");
